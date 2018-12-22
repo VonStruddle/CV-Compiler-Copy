@@ -26,7 +26,7 @@
                         <span>Log in</span>
                     </a>
                     <div class="navbar-item">
-                        <a class="button is-outlined is-animated">
+                        <a class="button is-outlined">
                             <svg id="icon-upload" viewBox="0 0 11 15" width="100%" height="100%">
                                 <path fill-rule="nonzero" d="M5.4.356L4.969.77l-4.2 4.2.862.862L4.8 2.662V12.6H6V2.662l3.169 3.17.862-.863-4.2-4.2L5.4.356zM0 13.8V15h10.8v-1.2H0z"></path>
                             </svg>
@@ -36,10 +36,57 @@
                 </div>
             </div>
         </nav>
+
+        <section class="hero">
+            <div class="hero-body">
+                <div class="container">
+                    <div class="columns">
+                        <div class="column">
+                            <img src="~static/home-hero.svg" alt="CV Compiler">
+                        </div>
+                        <div class="column">
+                            <vue-typed-js
+                                :strings="headlineStrings"
+                                :loop="true"
+                                :typeSpeed="100"
+                                :backSpeed="50"
+                            >
+                                <h1 class="title font-secondary">
+                                    Get a Tech CV worth a job at
+                                    <span class="typing"></span>
+                                </h1>
+                            </vue-typed-js>
+                            <p>
+                                We’ve analyzed <i>1M tech resumes</i> to create an online revision tool that scans your dev resume and indicate its weak points in real time.
+                            </p>
+                            <a href="#" class="button">
+                                <span class="button-text">
+                                    Improve your resume
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 </template>
 
+<script>
+export default {
+    data() {
+        return {
+            headlineStrings: ["Facebook", "Amazon", "Netflix", "Google"],
+        };
+    },
+}
+</script>
+
+
 <style lang="scss" scoped>
+.font-secondary {
+    font-family: "Space Mono", sans-serif;
+}
 .navbar {
     padding: 25px 40px 15px 40px;
 }
@@ -103,6 +150,77 @@ a {
     background-repeat: no-repeat;
     background-size: contain;
     margin-right: 10px;
+}
+.hero {
+    h1 {
+        font-size: 68px;
+        line-height: 1.13;
+        margin-bottom: 35px;
+    }
+
+    p {
+        margin-bottom: 60px;
+    }
+
+    .button {
+        width: 425px;
+        height: 65px;
+        margin-bottom: 15px;
+        font-size: 19px;
+        position: relative;
+
+        .button-text {
+            color: #000;
+            -webkit-transition: all .3s;
+            -o-transition: all .3s;
+            transition: all .3s;
+        }
+
+        &:hover {
+            background-color: #0bda8f;
+
+            .button-text {
+                transform: translate(-10px, -10px);
+            }
+        }
+
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            border: 3px solid transparent;
+            -webkit-transition: all .3s;
+            -o-transition: all .3s;
+            transition: all .3s;
+        }
+
+        &:hover::before {
+            transform: translate(-10px, -10px);
+            border-color: #000;
+        }
+
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            border: 3px solid transparent;
+            transition: all .3s;
+            z-index: -1;
+        }
+
+        &:hover::after {
+            transform: translate(10px, 10px);
+            border-color: #473BE7;
+        }
+    }
 }
 </style>
 
