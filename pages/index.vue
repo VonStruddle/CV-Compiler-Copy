@@ -52,7 +52,7 @@
                                 :backSpeed="50"
                             >
                                 <h1 class="title font-secondary">
-                                    Get a Tech CV worth a job at
+                                    Get a Tech CV worth a job at<br>
                                     <span class="typing"></span>
                                 </h1>
                             </vue-typed-js>
