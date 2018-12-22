@@ -33,13 +33,15 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
     plugins: [
-        '~plugins/typedJs.js',
+        "~plugins/typedJs.js",
     ],
 
     /*
   ** Nuxt.js modules
   */
-    modules: [],
+    modules: [
+        "nuxt-purgecss",
+    ],
 
     /*
   ** Build configuration
