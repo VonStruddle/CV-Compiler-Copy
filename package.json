@@ -1,0 +1,30 @@
+{
+  "name": "cvcompilercopy",
+  "version": "1.0.0",
+  "description": "I attempt to copy cvcomplier.com wonderful design for educational purposes",
+  "author": "Quentin Durantay",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "lintfix": "eslint --ext .js,.vue --ignore-path .gitignore . --fix",
+    "precommit": "npm run lint"
+  },
+  "dependencies": {
+    "bulma": "^0.7.2",
+    "cross-env": "^5.2.0",
+    "node-sass": "^4.11.0",
+    "nuxt": "^2.0.0",
+    "sass-loader": "^7.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0",
+    "babel-eslint": "^8.2.1",
+    "eslint": "^5.0.1",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-vue": "^4.0.0"
+  }
+}
