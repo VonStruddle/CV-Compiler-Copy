@@ -11,5 +11,8 @@
 $family-sans-serif: "Roboto Mono", sans-serif;
 
 @import "~bulma/bulma";
-</style>
 
+body {
+    counter-reset: section;
+}
+</style>

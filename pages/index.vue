@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="#top">
         <nav class="navbar" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
                 <a class="navbar-item" href="/">
@@ -103,6 +103,63 @@
                 </div>
             </div>
         </section>
+
+        <section class="section is-zig-zag">
+            <div class="container">
+                <div class="columns">
+                    <div class="column">
+                        <figure class="image">
+                            <img src="~static/upload-illustration.svg" alt="Upload your CV">
+                        </figure>
+                        <h2 class="title font-secondary">
+                            Upload<br>
+                            your CV
+                        </h2>
+                        <p>
+                            Upload your CV <strong>in English</strong> as a PDF or DOC(X) file. The max file size is 5MB.
+                        </p>
+                    </div>
+                    <div class="column is-opposed">
+                        <figure class="image">
+                            <img src="~static/unlock-illustration.svg" alt="Unlock the full toolkit">
+                        </figure>
+                        <h2 class="title font-secondary">
+                            Unlock<br>
+                            the full toolkit
+                        </h2>
+                        <p>
+                            Want to craft a killer tech resume and cover letter? CV Compiler has everything you need in one place.
+                        </p>
+                    </div>
+                </div>
+                <div class="columns">
+                    <div class="column">
+                        <figure class="image">
+                            <img src="~static/examination-illustration.svg" alt="Improve your resume today">
+                        </figure>
+                        <h2 class="title font-secondary">
+                            Improve<br>
+                            your resume <i>today</i>
+                        </h2>
+                        <p>
+                            It’s a huge time saver. We’ll show you what to improve and how to do it.
+                        </p>
+                    </div>
+                    <div class="column is-opposed">
+                        <figure class="image">
+                            <img src="~static/cv-review-illustration.svg" alt="Get the job you want">
+                        </figure>
+                        <h2 class="title font-secondary">
+                            Get<br>
+                            the job you want
+                        </h2>
+                        <p>
+                            A good resume is only half the battle, but it will definitely increase your chances of getting interviews.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 </template>
 
@@ -112,6 +169,11 @@ export default {
         return {
             headlineStrings: ["Facebook", "Amazon", "Netflix", "Google"],
         };
+    },
+    head() {
+        return {
+            title: "CV Complier copy"
+        }
     },
 }
 </script>
@@ -284,5 +346,40 @@ a {
         }
     }
 }
-</style>
+.is-zig-zag {
+    .column {
+        margin-bottom: 190px;
 
+        &.is-opposed {
+            margin-left: 180px;
+            -webkit-transform: translate(0, 180px);
+            -ms-transform: translate(0, 180px);
+            transform: translate(0, 180px);
+            margin-bottom: 0;
+        }
+    }
+
+    .image {
+        max-width: 180px;
+        margin-bottom: 35px;
+    }
+
+    .title {
+        margin-bottom: 20px;
+        line-height: 1.25;
+        font-size: 40px;
+
+        &::before {
+            -webkit-box-sizing: inherit;
+            box-sizing: inherit;
+            counter-increment: section;
+            content: "0" counter(section);
+            position: absolute;
+            left: -35px;
+            top: 248px;
+            font-size: 17px;
+            opacity: .3;
+        }
+    }
+}
+</style>
