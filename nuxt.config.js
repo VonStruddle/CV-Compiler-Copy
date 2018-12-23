@@ -54,6 +54,7 @@ module.exports = {
                 },
             },
         },
+        extractCSS: true,
         /*
     ** You can extend webpack config here
     */
